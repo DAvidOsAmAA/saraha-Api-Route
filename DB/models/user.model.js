@@ -1,3 +1,4 @@
+
 import { Schema, model } from "mongoose";
 
 const userSchema = new Schema({
@@ -7,7 +8,8 @@ const userSchema = new Schema({
   age: { type: Number, required: true, min: 18, max: 60 },
   isConfirmed: { type: Boolean, default: false },
   forgetCode: { type: String, unique: true },
-  profilePic: String
+  profilePic: {  secure_url : String, public_id : String },
+  coverPics: [{  secure_url : String, public_id : String}]
 }, {
   timestamps: true
 })

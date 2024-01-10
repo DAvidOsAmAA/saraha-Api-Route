@@ -7,6 +7,7 @@ const app = express()
 const port = 3000
 app.use(express.json())
 ConnectDB();
+app.use("/uploads",express.static("uploads"))
 app.use("/user",userRouter)
 app.use("/auth", authRouter)
 app.use("/message", messageRouter)
